@@ -1,14 +1,15 @@
 import config from "./app.js";
 import testConfig from "./app.test.js";
 import prodConfig from "./app.prod.js";
+import { Environment } from "../utils/environment.js";
 
 let appConfig = config;
 
-if (process.env.NODE_ENV === "test") {
+if (Environment.IsTest()) {
   appConfig = Object.assign(appConfig, testConfig);
 }
 
-if (process.env.NODE_ENV === "production") {
+if (Environment.IsProduction()) {
   appConfig = Object.assign(appConfig, prodConfig);
 }
 
