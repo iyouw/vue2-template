@@ -3,6 +3,9 @@ const SERVICES = {
   MEDIA_BRAIN_SERVICE: "http://192.1.3.167/MediaBrain/api/",
   CLOUD_RESOURCE_SERVICE: "http://192.1.3.167/CloudResource/api/",
   LOG_SERVICE: "http://192.1.3.167/LogSystem/api/",
+};
+
+const PAGES = {
   BIG_DATA_SEARCH_PAGE: "https://test-om.linker.cc/BigDataSearchApi/index.html",
 };
 
@@ -29,5 +32,6 @@ const AUTHENTICATION = {
 
 export default {
   SERVICES,
+  PAGES,
   AUTHENTICATION,
 };
