@@ -4,6 +4,7 @@ const KEY_LAST_LOCATION = "LAST_ROUTE_PATH";
 
 export function yuardBeforeEach(router) {
   router.beforeEach(async (to, from, next) => {
+    // if it is the signin redirect callback
     if (window.location.search.indexOf("code") !== -1) {
       try {
         await userManager.signinRedirectCallback();
