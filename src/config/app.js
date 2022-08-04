@@ -11,7 +11,7 @@ const PAGES = {
 
 const AUTHENTICATION = {
   //认证中心地址
-  authority: "http://192.1.2.27:5000",
+  authority: "http://192.1.3.167/id4/",
   //系统Id
   client_id: "BD95B464-80A4-470E-BFE4-111900000001",
   //密钥
