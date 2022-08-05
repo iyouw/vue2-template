@@ -11,7 +11,8 @@ export default {
       await userManager.signinRedirectCallback();
       this.enterPage();
     } catch (e) {
-      this.enterPage();
+      // here we have been logined, then when we refresh the page, we get this error message
+      if (e.message === "No matching state found in storage") this.enterPage();
     }
   },
   methods: {
