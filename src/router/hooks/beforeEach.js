@@ -5,7 +5,7 @@ export function yuardBeforeEach(router) {
   router.beforeEach(async (to, from, next) => {
     const user = await userManager.getUser();
     if (!user) {
-      localStorage.setItem(
+      sessionStorage.setItem(
         KEY_RETURN_URL_WHEN_SIGNIN_REDIRECT,
         window.location.href
       );

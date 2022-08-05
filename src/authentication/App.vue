@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     enterPage() {
-      window.location.href = localStorage.getItem(
+      window.location.href = sessionStorage.getItem(
         KEY_RETURN_URL_WHEN_SIGNIN_REDIRECT
       );
     },
