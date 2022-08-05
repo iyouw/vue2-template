@@ -10,10 +10,9 @@ export function yuardBeforeEach(router) {
       if (window.location.search.indexOf("code") !== -1) {
         try {
           await userManager.signinRedirectCallback();
-          const returnUrl = localStorage.getItem(
+          window.location.href = localStorage.getItem(
             KEY_RETURN_URL_WHEN_SIGNIN_REDIRECT
           );
-          window.location.replace(returnUrl);
         } catch {}
       } else {
         localStorage.setItem(
