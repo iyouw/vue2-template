@@ -17,7 +17,10 @@ const AUTHENTICATION = {
   //密钥
   client_secret: "123456",
   //认证完成后回调地址
-  redirect_uri: window.location.origin + window.location.pathname,
+  redirect_uri:
+    window.location.origin +
+    window.location.pathname.replace(/\/[^/]+$/, "") +
+    "callback.html",
   //认证类型 （固定）
   response_type: "code",
   //可使用域（固定）
@@ -27,7 +30,7 @@ const AUTHENTICATION = {
   //开启登录状态检测
   monitorSession: true,
   //检测登录状态间隔
-  checkSessionInterval: 5000,
+  checkSessionInterval: 10000,
 };
 
 export default {
