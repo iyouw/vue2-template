@@ -3,10 +3,12 @@ import config from "../config";
 import { userManager } from "./authentication";
 
 async function defaultRequestInterceptor(config) {
+  // token relations
   const user = await userManager.getUser();
   const token = user.access_token;
+  const tokenType = user.token_type;
+  config.headers["Authorization"] = `${tokenType} ${token}`;
 
-  config.headers["Authorization"] = `Bearer ${token}`;
   return config;
 }
 
