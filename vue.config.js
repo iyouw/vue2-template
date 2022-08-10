@@ -4,7 +4,7 @@ module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave: false,
   devServer: {
-    host: "192.1.2.55",
+    host: "0.0.0.0",
   },
   pages: {
     index: "src/main.js",

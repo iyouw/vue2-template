@@ -5,6 +5,10 @@ import { userManager } from "./authentication";
 async function defaultRequestInterceptor(config) {
   // token relations
   const user = await userManager.getUser();
+  if (!user) {
+    userManager.signinRedirect();
+    return config;
+  }
   const token = user.access_token;
   const tokenType = user.token_type;
   config.headers["Authorization"] = `${tokenType} ${token}`;
